@@ -1,5 +1,5 @@
 form {
-  padding: 12px;
+  padding: 24px 16px;
   background-color: #fff;
   border-radius: 5px;
   margin: 8px;
@@ -11,4 +11,7 @@ form {
 .general-info h2 {
   text-align: center;
   font-size: calc(19px + 0.2vw);
+}
+section + section {
+  margin-top: 35px;
 }

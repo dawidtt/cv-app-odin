@@ -8,14 +8,17 @@
 }
 input[type="text"],
 input[type="email"],
-input[type="tel"] {
+input[type="tel"],
+input[type="date"] {
   border: 1px solid #5570f1;
   padding: 6px 4px;
   border-radius: 4px;
   font-size: calc(16px + 0.2vw);
+  color: #242424;
 }
 input[type="text"]:focus,
 input[type="email"]:focus,
-input[type="tel"]:focus {
+input[type="tel"]:focus,
+input[type="date"]:focus {
   outline: 1px solid #5570f1;
 }
