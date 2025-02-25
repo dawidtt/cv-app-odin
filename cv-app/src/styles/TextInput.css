@@ -1,7 +1,7 @@
 .input-container label {
   display: flex;
   flex-direction: column;
-  font-size: 12px;
+  font-size: calc(12px + 0.2vw);
 }
 .input-container + .input-container {
   margin-top: 15px;
@@ -12,7 +12,7 @@ input[type="tel"] {
   border: 1px solid #5570f1;
   padding: 6px 4px;
   border-radius: 4px;
-  font-size: 16px;
+  font-size: calc(16px + 0.2vw);
 }
 input[type="text"]:focus,
 input[type="email"]:focus,
