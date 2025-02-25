@@ -26,6 +26,7 @@ function Form() {
           type="date"
         />
       </section>
+      <button className="generate-cv">Generate CV</button>
     </form>
   );
 }
