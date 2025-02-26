@@ -1,0 +1,19 @@
+.responsibilitie {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+.responsibilitie .input-container {
+  flex-grow: 1;
+}
+
+.responsibilitie button {
+  width: auto;
+  padding: 6px;
+  background-color: rgb(255, 67, 67);
+  border-radius: 6px;
+  margin: 10px;
+}
+.responsibilitie button:focus {
+  outline: 2px solid rgb(165, 0, 0);
+}

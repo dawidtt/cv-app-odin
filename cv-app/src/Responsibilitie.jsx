@@ -1,5 +1,4 @@
 import TextInput from "./TextInput";
-import "./styles/Responsibilities.css";
 
 function Responsibilitie({ id, value, onRemove, onChange }) {
   return (

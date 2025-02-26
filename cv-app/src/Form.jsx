@@ -1,3 +1,4 @@
+import Responsibilities from "./ResponsibilitiesList";
 import TextInput from "./TextInput";
 import "./styles/Form.css";
 
@@ -26,12 +27,26 @@ function Form() {
           type="date"
         />
       </section>
-      <section className="education">
+      <section className="experience">
         <h2>Experience</h2>
         <TextInput id="company-name" label="Company name" type="text" />
         <TextInput id="position" label="Position" type="text" />
+        <Responsibilities />
+        {/* <div className="responsibilities">
+          <TextInput id="responsibilitie" label="" type="text" />
+          <button className="add">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#ffffff"
+            >
+              <path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z" />
+            </svg>
+          </button>
+        </div> */}
 
-        <TextInput id="responsibilities" label="Responsibilities" type="text" />
         <TextInput
           id="date-of-work-start"
           label="Starting date of work"
