@@ -2,23 +2,7 @@ import { useState } from "react";
 import Responsibilitie from "./Responsibilitie.jsx";
 import "./styles/ResponsibilitiesList.css";
 
-function Responsibilities() {
-  function addInput(e) {
-    e.preventDefault();
-    setInputs([...inputs, { id: crypto.randomUUID(), value: "" }]);
-  }
-  function removeInput(id) {
-    setInputs(inputs.filter((input) => input.id !== id));
-  }
-  function changeInput(id, value) {
-    setInputs(
-      inputs.map((input) => (input.id === id ? { ...input, value } : input))
-    );
-  }
-  const [inputs, setInputs] = useState([
-    { id: crypto.randomUUID(), value: "" },
-  ]);
-
+function Responsibilities({ inputs, removeInput, changeInput, addInput }) {
   return (
     <fieldset>
       <legend>Responsibilities</legend>
@@ -29,7 +13,7 @@ function Responsibilities() {
             id={id}
             value={value}
             onRemove={removeInput}
-            onChange={changeInput}
+            onChange={(e) => changeInput(id, e.target.value)}
           />
         ))}
         <button className="add" onClick={addInput}>

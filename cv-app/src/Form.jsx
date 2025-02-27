@@ -14,10 +14,49 @@ function Form() {
     { id: "endSchoolDate", value: "" },
     { id: "companyName", value: "" },
     { id: "postion", value: "" },
-    { id: "responsibilities", value: "" },
+    { id: "responsibilities", value: [{ id: crypto.randomUUID(), value: "" }] },
     { id: "startJobDate", value: "" },
     { id: "endJobDate", value: "" },
   ]);
+
+  function addInput(e) {
+    e.preventDefault();
+    setInputs((prevInputs) =>
+      prevInputs.map((input) =>
+        input.id === "responsibilities"
+          ? {
+              ...input,
+              value: [...input.value, { id: crypto.randomUUID(), value: "" }],
+            }
+          : input
+      )
+    );
+  }
+
+  function removeInput(id) {
+    setInputs((prevInputs) =>
+      prevInputs.map((input) =>
+        input.id === "responsibilities"
+          ? { ...input, value: input.value.filter((res) => res.id !== id) }
+          : input
+      )
+    );
+  }
+  function changeResponsibilityInput(responsibilityId, newValue) {
+    setInputs((prevInputs) => {
+      return prevInputs.map((input) => {
+        if (input.id === "responsibilities") {
+          return {
+            ...input,
+            value: input.value.map((res) =>
+              res.id === responsibilityId ? { ...res, value: newValue } : res
+            ),
+          };
+        }
+        return input;
+      });
+    });
+  }
 
   function onChange(id, value) {
     setInputs((prevInputs) =>
@@ -100,7 +139,12 @@ function Form() {
           value={inputs.find((input) => input.id === "postion").value}
           onChange={(e) => onChange("postion", e.target.value)}
         />
-        <Responsibilities />
+        <Responsibilities
+          inputs={inputs.find((input) => input.id === "responsibilities").value}
+          removeInput={removeInput}
+          changeInput={changeResponsibilityInput}
+          addInput={addInput}
+        />
 
         <TextInput
           id="date-of-work-start"
