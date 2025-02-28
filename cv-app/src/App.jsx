@@ -22,12 +22,14 @@ function App() {
   function editOnClick() {
     const form = document.querySelector("form");
     form.classList.remove("hide");
+    window.scrollTo({ top: 0, behavior: "smooth" });
     setIsActive(false);
   }
   function onSubmit(e) {
     e.preventDefault();
     const form = document.querySelector("form");
     form.classList.add("hide");
+    window.scrollTo({ top: 0, behavior: "smooth" });
     setIsActive(true);
   }
 

@@ -36,8 +36,13 @@ function CV({ inputs }) {
   function formatTimespan(startDate, endDate) {
     const formatStartDate = new Date(startDate);
     const formatEndDate = new Date(endDate);
-
-    if (!(formatStartDate instanceof Date) || !(formatEndDate instanceof Date))
+    console.log(formatEndDate);
+    if (
+      !(formatStartDate instanceof Date) ||
+      isNaN(formatStartDate.getTime()) ||
+      !(formatEndDate instanceof Date) ||
+      isNaN(formatEndDate.getTime())
+    )
       return "";
     return `${
       formatStartDate.getMonth() + 1
@@ -94,7 +99,7 @@ function CV({ inputs }) {
         </p>
         <p className="company-name">{companyName}</p>
         <p className="position">{postion}</p>
-        <p>Responsibilities:</p>
+        <p className="responsibilities-text">Responsibilities:</p>
         <ul>{responsibilities}</ul>
       </section>
     </div>
