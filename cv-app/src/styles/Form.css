@@ -6,6 +6,7 @@ form {
   -webkit-box-shadow: 0px 10px 26px -13px rgba(66, 68, 90, 1);
   -moz-box-shadow: 0px 10px 26px -13px rgba(66, 68, 90, 1);
   box-shadow: 0px 10px 26px -13px rgba(66, 68, 90, 1);
+  max-width: 800px;
 }
 fieldset {
   border-radius: 6px;
