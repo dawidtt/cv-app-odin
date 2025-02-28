@@ -1,1 +1,14 @@
-
+h1 {
+  font-size: 42px;
+  text-align: center;
+  padding: 40px 0;
+}
+.hide {
+  display: none;
+}
+button.edit {
+  max-width: 750px;
+  margin: 26px auto;
+  display: block;
+  background-color: #34679d;
+}

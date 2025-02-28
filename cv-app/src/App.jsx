@@ -19,7 +19,11 @@ function App() {
     { id: "startJobDate", value: "" },
     { id: "endJobDate", value: "" },
   ]);
-
+  function editOnClick() {
+    const form = document.querySelector("form");
+    form.classList.remove("hide");
+    setIsActive(false);
+  }
   function onSubmit(e) {
     e.preventDefault();
     const form = document.querySelector("form");
@@ -75,6 +79,7 @@ function App() {
   }
   return (
     <>
+      <h1>CV Generator</h1>
       <Form
         onSubmit={onSubmit}
         addInput={addInput}
@@ -83,7 +88,14 @@ function App() {
         onChange={onChange}
         inputs={inputs}
       />
-      {isActive && <CV inputs={inputs} />}
+      {isActive && (
+        <>
+          <CV inputs={inputs} />
+          <button className="edit" onClick={editOnClick}>
+            Edit
+          </button>
+        </>
+      )}
     </>
   );
 }

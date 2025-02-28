@@ -11,7 +11,7 @@ function Form({
   inputs,
 }) {
   return (
-    <form>
+    <form onSubmit={onSubmit}>
       <section className="general-info">
         <h2>General Info</h2>
         <TextInput
@@ -58,7 +58,7 @@ function Form({
  "
           type="date"
           value={inputs.find((input) => input.id === "startSchoolDate").value}
-          onChange={(e) => onChange("email", e.target.value)}
+          onChange={(e) => onChange("startSchoolDate", e.target.value)}
         />
         <TextInput
           id="date-of-study-end"
@@ -96,14 +96,14 @@ function Form({
           label="Starting date of work"
           type="date"
           value={inputs.find((input) => input.id === "startJobDate").value}
-          onChange={(e) => onChange("email", e.target.value)}
+          onChange={(e) => onChange("startJobDate", e.target.value)}
         />
         <TextInput
           id="date-of-work-end"
           label="Ending date of work"
           type="date"
           value={inputs.find((input) => input.id === "endJobDate").value}
-          onChange={(e) => onChange("email", e.target.value)}
+          onChange={(e) => onChange("endJobDate", e.target.value)}
         />
       </section>
       <button className="generate-cv">Generate CV</button>

@@ -6,7 +6,9 @@
 .responsibilitie .input-container {
   flex-grow: 1;
 }
-
+.responsibilitie input {
+  width: max(80px, 100%);
+}
 .responsibilitie button {
   width: auto;
   padding: 6px;
