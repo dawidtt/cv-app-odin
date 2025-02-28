@@ -1,8 +1,10 @@
 import "./App.css";
 import Form from "./Form";
+import CV from "./CV";
 import { useState } from "react";
 
 function App() {
+  const [isActive, setIsActive] = useState(false);
   const [inputs, setInputs] = useState([
     { id: "name", value: "" },
     { id: "phoneNumber", value: "" },
@@ -18,7 +20,12 @@ function App() {
     { id: "endJobDate", value: "" },
   ]);
 
-  function onSubmit() {}
+  function onSubmit(e) {
+    e.preventDefault();
+    const form = document.querySelector("form");
+    form.classList.add("hide");
+    setIsActive(true);
+  }
 
   function addInput(e) {
     e.preventDefault();
@@ -67,14 +74,17 @@ function App() {
     );
   }
   return (
-    <Form
-      onSubmit={onSubmit}
-      addInput={addInput}
-      removeInput={removeInput}
-      changeResponsibilityInput={changeResponsibilityInput}
-      onChange={onChange}
-      inputs={inputs}
-    />
+    <>
+      <Form
+        onSubmit={onSubmit}
+        addInput={addInput}
+        removeInput={removeInput}
+        changeResponsibilityInput={changeResponsibilityInput}
+        onChange={onChange}
+        inputs={inputs}
+      />
+      {isActive && <CV inputs={inputs} />}
+    </>
   );
 }
 
