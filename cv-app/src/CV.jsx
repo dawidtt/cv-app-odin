@@ -36,7 +36,6 @@ function CV({ inputs }) {
   function formatTimespan(startDate, endDate) {
     const formatStartDate = new Date(startDate);
     const formatEndDate = new Date(endDate);
-    console.log(formatEndDate);
     if (
       !(formatStartDate instanceof Date) ||
       isNaN(formatStartDate.getTime()) ||
