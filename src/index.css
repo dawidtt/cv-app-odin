@@ -37,3 +37,6 @@ img {
 body {
   background-color: #dff1fd;
 }
+root {
+  padding: 16px;
+}
